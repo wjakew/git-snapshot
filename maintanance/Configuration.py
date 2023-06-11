@@ -107,7 +107,7 @@ class Configuration:
                 elif line.startswith("%"):
                     self.list_of_repos_to_clone.append(line)
             except Exception as e:
-                self.printer.cprint("Passing line!", "RED")
+                pass
 
     # function for validating data file
     def validate(self):
@@ -124,6 +124,9 @@ class Configuration:
         self.printer.cprint("default_snapshot_path: " + self.default_snapshot_path, "BLUE")
         self.printer.cprint("default_zip: " + str(self.default_zip), "BLUE")
         self.printer.cprint("list of repos to clone", "RED")
-        for path in self.list_of_repos_to_clone:
-            self.printer.cprint(path, "RED")
+        if len(self.list_of_repos_to_clone) == 0:
+            self.printer.cprint("empty", "RED")
+        else:
+            for path in self.list_of_repos_to_clone:
+                self.printer.cprint(path, "RED")
         self.printer.cprint("Configuration status END", "BLUE")

@@ -9,7 +9,7 @@ import maintanance.Configuration as config
 import sys
 
 version = "v1.0.0"
-build = "GITS-080623REV1"
+build = "GITS-120623REV1"
 printer = cp.CPrint()
 
 
